@@ -1,16 +1,30 @@
 /*
   Proyecto- Simulación de Sistemas Naturales - IC8048
-  Grupo: 40
-  Integrantes:
-    Christian Corrales Rounda - 200411437
-    Darío Monestel Corella - 2014072300
-    Ruth Ulloa Bonilla - 2015145716
-    
-  Segundo semestre 2018
-
-*/
+ Grupo: 40
+ Integrantes:
+ Christian Corrales Rounda - 200411437
+ Darío Monestel Corella - 2014072300
+ Ruth Ulloa Bonilla - 2015145716
+ 
+ Segundo semestre 2018
+ 
+ */
 
 import ddf.minim.*;
+import shiffman.box2d.*;
+import org.jbox2d.dynamics.*;
+import org.jbox2d.collision.shapes.*;
+import org.jbox2d.dynamics.joints.*;
+import org.jbox2d.common.*;
+import java.util.ListIterator;
+
+
+
+Box2DProcessing box2d;
+
+Surface surface;
+Car car;
+ArrayList<Box> wall;
 
 //
 // states
@@ -34,7 +48,8 @@ void setup()
 {
   // runs only once
   //
-  size(800, 600);
+  //size(800, 600);
+  fullScreen();
   smooth();
   manager = new Minim(this);
   background_music = manager.loadFile("Sound.mp3");
@@ -42,14 +57,60 @@ void setup()
   font = createFont("ARCARTER-78.vlw", 14);
   textFont(font);
   bg = loadImage("tarde.jpg");
-  bg.resize(width,height);
+  bg.resize(width, height);
+  box2dInit();
 } // func
 //
+
+void box2dInit()
+{
+  box2d = new Box2DProcessing(this);
+  box2d.createWorld();
+
+  //Surface
+  ArrayList<Vec2> points = new ArrayList();
+  points.add(new Vec2(0, height));
+  points.add(new Vec2(0, height-250));
+  points.add(new Vec2(width, height-250));
+  points.add(new Vec2(width, height));
+  points.add(new Vec2(0, height));
+  surface = new Surface(points);
+
+  //Car
+  CircleAgent a1 = new CircleAgent(0, height-250, 20);
+  CircleAgent a2 = new CircleAgent(80, height-250, 20);
+  Box box = new Box(40, height-270, 150, 50);
+  car = new Car(a1, a2, box);
+
+  //Wall
+  wall = new ArrayList();
+  wall.add(new Box(width-28, height-255, 50, 25, true));
+  wall.add(new Box(width-28, height-280, 50, 25, true));
+  wall.add(new Box(width-28, height-305, 50, 25, true));
+  wall.add(new Box(width-28, height-330, 50, 25, true));
+  wall.add(new Box(width-28, height-355, 50, 25, true));
+  wall.add(new Box(width-28, height-380, 50, 25, true));
+  wall.add(new Box(width-28, height-405, 50, 25, true));
+  wall.add(new Box(width-28, height-430, 50, 25, true));
+  wall.add(new Box(width-28, height-455, 50, 25, true));
+
+  wall.add(new Box(width-78, height-255, 50, 25, true));
+  wall.add(new Box(width-78, height-280, 50, 25, true));
+  wall.add(new Box(width-78, height-305, 50, 25, true));
+  wall.add(new Box(width-78, height-330, 50, 25, true));
+  wall.add(new Box(width-78, height-355, 50, 25, true));
+  wall.add(new Box(width-78, height-380, 50, 25, true));
+  wall.add(new Box(width-78, height-405, 50, 25, true));
+  wall.add(new Box(width-78, height-430, 50, 25, true));
+  wall.add(new Box(width-78, height-455, 50, 25, true));
+}
+
+
 void draw()
 {
   // the main routine. It handels the states.
   // runs again and again
-  image(bg,0,0);
+  image(bg, 0, 0);
   switch (state) {
   case stateMenu:
     showMenu();
@@ -150,13 +211,20 @@ void showMenu() {
 } // func
 
 void handleStateSeeSecondMenu() {
-  background(73, 102, 185);
+  /*background(73, 102, 185);
   fill(0);
   textSize(32);
   text("menú para configurar el entorno", 100, 100, 3);
   textSize(14);
-  text("..... texto ", 100, 200);
+  text("..... texto ", 100, 200);*/
   //
+  background(0);
+  box2d.step();
+  surface.display();
+  car.display();
+  for (Box box : wall) {
+    box.display();
+  }
 } // func
 //
 
