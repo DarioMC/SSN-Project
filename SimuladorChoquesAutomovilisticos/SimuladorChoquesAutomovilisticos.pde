@@ -200,23 +200,44 @@ void keyPressedForStateSeeAbout() {
 void showMenu() {
   //background(73, 102, 185);
   fill(0);
-  textSize(32);
-  text("Simulador de Choques Automovilísticos", 100, 100, 3);
-  textSize(20);
-  text("Presionar 1: Realizar una simulación", 100, 200);
-  text("Presionar 2: Acerca de la aplicación", 100, 220);
-  //
-  text("Presionar x: Para cerrar", 100, 260);
-  //
+  textSize(80);
+  text("Simulador de Choques Automovilísticos", 120, 255, 50);
+  fill(0, 102, 153, 51);
+  text("Simulador de Choques Automovilísticos", 130, 270, 50); 
+
+  fill(0);
+  textSize(50);
+  text("( Presionar 1 )         Para realizar una simulación", 120, 390);
+
+  fill(0, 102, 153, 51);
+  text("( Presionar 1 )         Para realizar una simulación", 125, 400);
+
+
+  fill(0);
+  textSize(50);
+  text("( Presionar 2 )         Acerca de la aplicación", 120, 470);
+  fill(0, 102, 153, 51);
+  text("( Presionar 2 )         Acerca de la aplicación", 125, 480);
+
+
+
+  fill(0);
+  textSize(50);
+  text("( Presionar X )         Para cerrar", 120, 580);
+  fill(0, 102, 153, 51);
+  text("( Presionar X )         Para cerrar", 125, 590);
 } // func
+
+
+
 
 void handleStateSeeSecondMenu() {
   /*background(73, 102, 185);
-  fill(0);
-  textSize(32);
-  text("menú para configurar el entorno", 100, 100, 3);
-  textSize(14);
-  text("..... texto ", 100, 200);*/
+   fill(0);
+   textSize(32);
+   text("menú para configurar el entorno", 100, 100, 3);
+   textSize(14);
+   text("..... texto ", 100, 200);*/
   //
   background(0);
   box2d.step();
