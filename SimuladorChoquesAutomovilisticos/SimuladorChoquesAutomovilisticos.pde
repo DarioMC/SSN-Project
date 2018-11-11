@@ -239,17 +239,13 @@ void handleStateSeeSecondMenu() {
    textSize(14);
    text("..... texto ", 100, 200);*/
   //
-  
-  
-  /*background(0);
+  background(0);
   box2d.step();
   surface.display();
   car.display();
   for (Box box : wall) {
     box.display();
-  }*/
-  
-  
+  }
 } // func
 //
 
