@@ -84,25 +84,25 @@ void box2dInit()
 
   //Wall
   wall = new ArrayList();
-  wall.add(new Box(width-28, height-255, 50, 25, true));
-  wall.add(new Box(width-28, height-280, 50, 25, true));
-  wall.add(new Box(width-28, height-305, 50, 25, true));
-  wall.add(new Box(width-28, height-330, 50, 25, true));
-  wall.add(new Box(width-28, height-355, 50, 25, true));
-  wall.add(new Box(width-28, height-380, 50, 25, true));
-  wall.add(new Box(width-28, height-405, 50, 25, true));
-  wall.add(new Box(width-28, height-430, 50, 25, true));
-  wall.add(new Box(width-28, height-455, 50, 25, true));
+  wall.add(new Box(width-98, height-255, 50, 25, true));
+  wall.add(new Box(width-98, height-280, 50, 25, true));
+  wall.add(new Box(width-98, height-305, 50, 25, true));
+  wall.add(new Box(width-98, height-330, 50, 25, true));
+  wall.add(new Box(width-98, height-355, 50, 25, true));
+  wall.add(new Box(width-98, height-380, 50, 25, true));
+  wall.add(new Box(width-98, height-405, 50, 25, true));
+  wall.add(new Box(width-98, height-430, 50, 25, true));
+  wall.add(new Box(width-98, height-455, 50, 25, true));
 
-  wall.add(new Box(width-78, height-255, 50, 25, true));
-  wall.add(new Box(width-78, height-280, 50, 25, true));
-  wall.add(new Box(width-78, height-305, 50, 25, true));
-  wall.add(new Box(width-78, height-330, 50, 25, true));
-  wall.add(new Box(width-78, height-355, 50, 25, true));
-  wall.add(new Box(width-78, height-380, 50, 25, true));
-  wall.add(new Box(width-78, height-405, 50, 25, true));
-  wall.add(new Box(width-78, height-430, 50, 25, true));
-  wall.add(new Box(width-78, height-455, 50, 25, true));
+  wall.add(new Box(width-148, height-255, 50, 25, true));
+  wall.add(new Box(width-148, height-280, 50, 25, true));
+  wall.add(new Box(width-148, height-305, 50, 25, true));
+  wall.add(new Box(width-148, height-330, 50, 25, true));
+  wall.add(new Box(width-148, height-355, 50, 25, true));
+  wall.add(new Box(width-148, height-380, 50, 25, true));
+  wall.add(new Box(width-148, height-405, 50, 25, true));
+  wall.add(new Box(width-148, height-430, 50, 25, true));
+  wall.add(new Box(width-148, height-455, 50, 25, true));
 }
 
 

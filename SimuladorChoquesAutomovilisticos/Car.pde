@@ -14,16 +14,16 @@ class Car
     
     RevoluteJointDef rjd1 = new RevoluteJointDef();
     rjd1.initialize(wheel1.body, box.body, wheel1.body.getTransform().p);
-    rjd1.motorSpeed = PI * 7;
-    rjd1.maxMotorTorque = 500;
+    rjd1.motorSpeed = PI * 9;
+    rjd1.maxMotorTorque = 1000;
     rjd1.enableMotor = true;
     
     joint = box2d.createJoint(rjd1);
     
     RevoluteJointDef rjd2 = new RevoluteJointDef();
     rjd2.initialize(wheel2.body, box.body, wheel2.body.getTransform().p);
-    rjd2.motorSpeed = PI * 7;
-    rjd2.maxMotorTorque = 500;
+    rjd2.motorSpeed = PI * 9;
+    rjd2.maxMotorTorque = 1000;
     rjd2.enableMotor = true;
     
     joint = box2d.createJoint(rjd2);
