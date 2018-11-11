@@ -200,13 +200,13 @@ void keyPressedForStateSeeAbout() {
 void showMenu() {
   //background(73, 102, 185);
   fill(0);
-  textSize(80);
+  textSize(50);
   text("Simulador de Choques Automovilísticos", 120, 255, 50);
   fill(0, 102, 153, 51);
   text("Simulador de Choques Automovilísticos", 130, 270, 50); 
 
   fill(0);
-  textSize(50);
+  textSize(30);
   text("( Presionar 1 )         Para realizar una simulación", 120, 390);
 
   fill(0, 102, 153, 51);
@@ -214,7 +214,7 @@ void showMenu() {
 
 
   fill(0);
-  textSize(50);
+  textSize(30);
   text("( Presionar 2 )         Acerca de la aplicación", 120, 470);
   fill(0, 102, 153, 51);
   text("( Presionar 2 )         Acerca de la aplicación", 125, 480);
@@ -222,7 +222,7 @@ void showMenu() {
 
 
   fill(0);
-  textSize(50);
+  textSize(30);
   text("( Presionar X )         Para cerrar", 120, 580);
   fill(0, 102, 153, 51);
   text("( Presionar X )         Para cerrar", 125, 590);
