@@ -42,7 +42,7 @@ class Box {
     } else {
       
       fd.setDensity(1);
-      fd.setFriction(0.2);
+      fd.setFriction(0.7);
       fd.setRestitution(0.5);
     }
 

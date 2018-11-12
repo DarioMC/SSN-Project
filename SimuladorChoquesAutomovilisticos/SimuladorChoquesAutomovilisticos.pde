@@ -16,14 +16,17 @@ import org.jbox2d.collision.shapes.*;
 import org.jbox2d.dynamics.joints.*;
 import org.jbox2d.common.*;
 import java.util.ListIterator;
-
+import controlP5.*;
 
 
 Box2DProcessing box2d;
 
 Surface surface;
 Car car;
+ControlP5 cp5;
 ArrayList<Box> wall;
+CircleAgent a1;
+CircleAgent a2;
 
 //
 // states
@@ -58,6 +61,7 @@ void setup()
   bg = loadImage("tarde.jpg");
   bg.resize(width, height);
   box2dInit();
+  
 } // func
 //
 
@@ -65,6 +69,7 @@ void box2dInit()
 {
   box2d = new Box2DProcessing(this);
   box2d.createWorld();
+  
 
   //Surface
   ArrayList<Vec2> points = new ArrayList();
@@ -102,6 +107,9 @@ void box2dInit()
   wall.add(new Box(width-148, height-405, 50, 25, true));
   wall.add(new Box(width-148, height-430, 50, 25, true));
   wall.add(new Box(width-148, height-455, 50, 25, true));
+  
+  
+  
 }
 
 
@@ -158,6 +166,7 @@ void keyPressedForStateMenu() {
   switch(key) {
   case '1':
     state = stateSeeSecondMenu;
+    initControls();//start GUI(CP5)
     break;
   case '2':
     state = stateSeeAbout;
@@ -263,3 +272,56 @@ void handleStateSeeAbout() {
 } // func
 // ----------------------------------------------------------------
 //
+
+//Controls GUI
+void initControls() {
+  cp5 = new ControlP5(this);
+
+ cp5 = new ControlP5(this);
+    cp5.addSlider("setViento")
+    .setPosition(10, 70)
+    .setSize(300, 20)
+    .setRange(0,1)
+    .setValue(0)
+    .setCaptionLabel("Viento");
+ cp5 = new ControlP5(this);
+    cp5.addSlider("setVelocidad")
+    .setPosition(10, 10)
+    .setSize(300, 20)
+    .setRange(0, 150)
+    .setValue(25)
+    .setCaptionLabel("Velocidad");
+ cp5 = new ControlP5(this);
+    cp5.addSlider("setAlcohol")
+    .setPosition(10, 100)
+    .setSize(300, 20)
+    .setRange(0, 1)
+    .setValue(0)
+    .setCaptionLabel("Alcohol");
+  cp5 = new ControlP5(this);
+    cp5.addSlider("setFricción")
+    .setPosition(10, 40)
+    .setSize(300, 20)
+    .setRange(0, 1)
+    .setValue(0.1)
+    .setCaptionLabel("Friccion");
+}
+
+//Functions for use GUI
+void setViento(float value) {
+  //car.addWind(value);
+}
+
+void setVelocidad(float value) {
+  //car.setVelocity(value);
+}
+
+void setAlcohol(float value) {
+
+}
+
+void setFriccion(float value) {
+  //a1.setFriction(value);
+  //a2.setFriction(value); 
+}  
+  
