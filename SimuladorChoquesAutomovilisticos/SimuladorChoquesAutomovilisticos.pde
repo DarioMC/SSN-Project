@@ -27,6 +27,7 @@ ControlP5 cp5;
 ArrayList<Box> wall;
 CircleAgent a1;
 CircleAgent a2;
+Box Friction;
 
 //
 // states
@@ -258,16 +259,16 @@ void handleStateSeeSecondMenu() {
 //
 
 void handleStateSeeAbout() {
-  background(73, 102, 185);
+  background(252, 118, 255);
   fill(0);
   textSize(32);
   text("Aplicación para simular choques automovilísticos...", 4, 100, 3);
-  textSize(12);
+  textSize(13);
   text("Simulador de choques automovilísticos, con posibilidad de configurar diversas variables de entorno", 50, 190);
-  text("para observar los diferentes comportamientos generados por dichas colisiones.", 50, 200);
-  text("El simulador de choques permitirá escoger el tipo de vehículo, el tipo de colisión, porcentaje de alcohol", 50, 210);
-  text("en la sangre y diferentes fuerzas para aplicar a los autos, esto con el fin de obtener", 50, 220); 
-  text("datos más precisos, acorde a la simulación.", 50, 230);
+  text("para observar los diferentes comportamientos generados por dichas colisiones.", 50, 210);
+  text("El simulador de choques permitirá escoger el tipo de vehículo, el tipo de colisión, porcentaje de alcohol", 50, 220);
+  text("en la sangre y diferentes fuerzas para aplicar a los autos, esto con el fin de obtener", 50, 230); 
+  text("datos más precisos, acorde a la simulación.", 50, 240);
   //
 } // func
 // ----------------------------------------------------------------
@@ -323,5 +324,6 @@ void setAlcohol(float value) {
 void setFriccion(float value) {
   //a1.setFriction(value);
   //a2.setFriction(value); 
+  
 }  
   

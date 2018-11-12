@@ -4,6 +4,7 @@ class Box {
   float w, h;
   color c;
   boolean isBrick = false;
+  float Friction = 0.7;
 
 
   Box(float x, float y, float w, float h) {
@@ -42,7 +43,7 @@ class Box {
     } else {
       
       fd.setDensity(1);
-      fd.setFriction(0.7);
+      fd.setFriction(Friction);
       fd.setRestitution(0.5);
     }
 
