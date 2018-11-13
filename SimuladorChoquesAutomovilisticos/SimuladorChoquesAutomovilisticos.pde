@@ -9,7 +9,7 @@
  
  */
 
-import ddf.minim.*;
+//import ddf.minim.*;
 import shiffman.box2d.*;
 import org.jbox2d.dynamics.*;
 import org.jbox2d.collision.shapes.*;
@@ -41,8 +41,8 @@ PFont font;
 PImage bg;
 //
 // Sound
-Minim manager;
-AudioPlayer background_music;
+//Minim manager;
+//AudioPlayer background_music;
 
 // ----------------------------------------------------------------------
 // main functions
@@ -54,9 +54,9 @@ void setup()
   //size(800, 600);
   fullScreen();
   smooth();
-  manager = new Minim(this);
-  background_music = manager.loadFile("Sound.mp3");
-  background_music.loop();
+  //manager = new Minim(this);
+  //background_music = manager.loadFile("Sound.mp3");
+  //background_music.loop();
   font = createFont("ARCARTER-78.vlw", 14);
   textFont(font);
   bg = loadImage("tarde.jpg");

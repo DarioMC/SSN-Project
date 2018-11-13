@@ -4,7 +4,7 @@ class Box {
   float w, h;
   color c;
   boolean isBrick = false;
-  float Friction = 0.7;
+  float Friction = 0.8;
 
 
   Box(float x, float y, float w, float h) {
