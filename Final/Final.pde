@@ -54,7 +54,7 @@ void setup()
   textFont(font);
   bg = loadImage("wallpaper.png");
   bg.resize(width, height);
-  box2dInit();
+  
   initControls();//start GUI(CP5)
 } // func
 //
@@ -120,6 +120,7 @@ void showMenu() {
   textSize(20);
   text("Presione 0 para colisionar con otro auto o 1 para colisionar con una pared", 220, 140, 50);
   if (keyPressed) {
+    box2dInit();
     if (key == '0') {
       typeSimulation = 0;
       initStaticCar();
