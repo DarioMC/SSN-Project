@@ -2,7 +2,6 @@
   Proyecto- Simulación de Sistemas Naturales - IC8048
  Grupo: 40
  Integrantes:
- Christian Corrales Rounda - 200411437
  Darío Monestel Corella - 2014072300
  Ruth Ulloa Bonilla - 2015145716
  
