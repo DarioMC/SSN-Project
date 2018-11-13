@@ -3,7 +3,8 @@ class Car
   CircleAgent wheel1;
   CircleAgent wheel2;
   Box box;
-  Joint joint;
+  RevoluteJoint joint;
+  RevoluteJoint joint2;
   RevoluteJointDef rjd1;
   RevoluteJointDef rjd2;
 
@@ -17,13 +18,13 @@ class Car
     rjd1.initialize(wheel1.body, box.body, wheel1.body.getTransform().p);
     rjd1.enableMotor = false;
 
-    joint = box2d.createJoint(rjd1);
+    joint = (RevoluteJoint) box2d.createJoint(rjd1);
 
     RevoluteJointDef rjd2 = new RevoluteJointDef();
     rjd2.initialize(wheel2.body, box.body, wheel2.body.getTransform().p);
     rjd2.enableMotor = false;
 
-    joint = box2d.createJoint(rjd2);
+    joint2 = (RevoluteJoint) box2d.createJoint(rjd2);
   }
 
   Car(CircleAgent c1, CircleAgent c2, Box box)
@@ -39,7 +40,7 @@ class Car
     rjd1.maxMotorTorque = 1000;
     rjd1.enableMotor = true;
 
-    joint = box2d.createJoint(rjd1);
+    joint = (RevoluteJoint) box2d.createJoint(rjd1);
 
     rjd2 = new RevoluteJointDef();
     rjd2.initialize(wheel2.body, box.body, wheel2.body.getTransform().p);
@@ -47,12 +48,13 @@ class Car
     rjd2.maxMotorTorque = 1000;
     rjd2.enableMotor = true;
 
-    joint = box2d.createJoint(rjd2);
+    joint2 = (RevoluteJoint) box2d.createJoint(rjd2);
   }
 
   void setVelocity(float value) {
-    rjd1.motorSpeed = PI * (value%9);
-    rjd2.motorSpeed = PI * (value%9);
+    joint.setMotorSpeed( PI * (value));
+    joint2.setMotorSpeed( PI * (value));
+   
   }
 
   void addWind(float value){

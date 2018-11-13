@@ -113,7 +113,7 @@ void initControls() {
     cp5.addSlider("setVelocidad")
     .setPosition(10, 10)
     .setSize(300, 20)
-    .setRange(0, 150)
+    .setRange(0, 10)
     .setValue(25)
     .setCaptionLabel("Velocidad");
  cp5 = new ControlP5(this);
