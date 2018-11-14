@@ -142,10 +142,12 @@ void setVelocidad(float value) {
 }
 
 void setAlcohol(float value) {
-
+ // alcohol = value; 
 }
 
 void setFriccion(float value) {
   a1.setFriction(value);
-  a2.setFriction(value); 
+  a2.setFriction(value);
+
+  
 }

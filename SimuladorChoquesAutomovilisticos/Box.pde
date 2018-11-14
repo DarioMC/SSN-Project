@@ -4,7 +4,9 @@ class Box {
   float w, h;
   color c;
   boolean isBrick = false;
-  float Friction = 0.8;
+  float Friction = 1;
+  Fixture fixture;
+  FixtureDef fd;
 
 
   Box(float x, float y, float w, float h) {
@@ -32,7 +34,7 @@ class Box {
     PolygonShape ps = new PolygonShape();
     ps.setAsBox(box2d.scalarPixelsToWorld(w / 2), box2d.scalarPixelsToWorld(h / 2));    
 
-    FixtureDef fd = new FixtureDef();
+    fd = new FixtureDef();
     fd.setShape(ps);
     
     if (isBrick) {
@@ -47,7 +49,7 @@ class Box {
       fd.setRestitution(0.5);
     }
 
-    body.createFixture(fd);
+    fixture = body.createFixture(fd);
   }
 
 
@@ -68,5 +70,11 @@ class Box {
       rect(0, 0, w, h);
     }
     popMatrix();
+  }
+  
+  
+  void setFriction(float value){
+    fd.setFriction(value);
+  
   }
 }

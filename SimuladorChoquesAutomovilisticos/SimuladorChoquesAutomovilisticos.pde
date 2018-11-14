@@ -324,6 +324,16 @@ void setAlcohol(float value) {
 void setFriccion(float value) {
   //a1.setFriction(value);
   //a2.setFriction(value); 
+    for (int counter = 0; counter < wall.size(); counter++) {           
+          //System.out.println(wall.get(counter)); 
+          wall.get(counter).setFriction(value);
+          
+      } 
+    
+    
+    
   
-}  
+  }
+  
+ 
   
